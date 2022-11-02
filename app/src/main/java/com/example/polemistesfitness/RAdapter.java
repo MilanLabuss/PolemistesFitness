@@ -1,9 +1,7 @@
 package com.example.polemistesfitness;
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +48,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.MyViewHolder> {
             @Override
             //might have to use getContext Here
             public void onClick(View v) {
-                Intent intent = new Intent(context, ChestExercisesActivity.class);
+                Intent intent = new Intent(context, ExercisesActivity.class);
                 intent.putExtra("Name", names[holder.getAdapterPosition()]);
                 //intent.putExtra("myImg", images[holder.getAdapterPosition()]);
                 context.startActivity(intent);
