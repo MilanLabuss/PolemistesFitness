@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ExercisesActivity extends AppCompatActivity {
 
+    //This is activity chest exercises
     RecyclerView recycleview;
+    TextView tview;
 
 
     String chestNames[];
@@ -30,6 +34,8 @@ public class ExercisesActivity extends AppCompatActivity {
     R.drawable.shouldermachine,R.drawable.barbbellraises,R.drawable.sidelaterals};
 
     String nm;      //this will store the name of the muscle group the user clicked on
+
+    String exercisenameclicked;
 
 
 
@@ -76,7 +82,26 @@ public class ExercisesActivity extends AppCompatActivity {
             RAdapter myadapter = new RAdapter(this,shoulderNames,shoulderImages);
             recycleview.setAdapter(myadapter);
             recycleview.setLayoutManager(new LinearLayoutManager(this));
+
         }
+
+
+
+
+ //start the log activity when one of the exericses is clicked
+        if (!(nm.equals("Chest")) && !(nm.equals("Back")) && !(nm.equals("Arms"))
+                && !(nm.equals("Legs")) && !(nm.equals("Shoulders"))){
+            Intent i = new Intent(ExercisesActivity.this, LogSet.class);
+            i.putExtra("ename",nm);
+            startActivity(i);
+        }
+
+
+
+//        Intent i = new Intent(ExercisesActivity.this, LogSet.class);
+//        i.putExtra("ename",nm);
+//        startActivity(i);
+
 
 
 
