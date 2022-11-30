@@ -87,14 +87,16 @@ public class ExercisesActivity extends AppCompatActivity {
 
 
 
-
+        getData();
  //start the log activity when one of the exericses is clicked
         if (!(nm.equals("Chest")) && !(nm.equals("Back")) && !(nm.equals("Arms"))
                 && !(nm.equals("Legs")) && !(nm.equals("Shoulders"))){
             Intent i = new Intent(ExercisesActivity.this, LogSet.class);
             i.putExtra("ename",nm);
             startActivity(i);
+            finish();
         }
+        getData();
 
 
 

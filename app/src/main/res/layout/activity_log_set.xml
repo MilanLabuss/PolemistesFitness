@@ -10,13 +10,12 @@
         android:id="@+id/exerciseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="192dp"
-        android:text="TextView"
+        android:layout_marginTop="132dp"
+        android:gravity="center"
+        android:text="@string/textview"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,13 +25,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:ems="10"
-        android:hint="Weight"
+        android:hint="@string/weight"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseName" />
+        app:layout_constraintTop_toBottomOf="@+id/exerciseName"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/repstxt"
@@ -40,20 +41,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:ems="10"
-        android:hint="Reps"
+        android:hint="@string/reps"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weighttxt" />
+        app:layout_constraintTop_toBottomOf="@+id/weighttxt"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/logsetbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="224dp"
-        android:text="Submit"
+        android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

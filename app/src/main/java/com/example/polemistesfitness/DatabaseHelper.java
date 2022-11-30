@@ -4,6 +4,7 @@ package com.example.polemistesfitness;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -68,5 +69,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }else{
             Toast.makeText(context, "add success", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //method to read all data from our database table
+    Cursor readAllDate() {
+
+//this select query needs a WHERE clause so the date is only from last week
+        String query = " SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+
+        if(db!=null)
+        {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor; //This will contain all the data from the db table
     }
 }
