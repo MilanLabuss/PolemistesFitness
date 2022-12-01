@@ -51,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addBook(String exerciseName, int weight, int reps, String date){
+    void addSet(String exerciseName, int weight, int reps, String date){
         SQLiteDatabase db = this.getWritableDatabase();
         //content values is used to put shit into database table
         ContentValues cv  = new ContentValues();
@@ -84,5 +84,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor; //This will contain all the data from the db table
+    }
+
+    //This query will return all sets from that day
+
+    Cursor readDate(String date) {
+
+        String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + TOTAL_DATE + " LIKE" + " '%" + date + "%' ";
+        System.out.println(query);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+
+        if(db!=null)
+        {
+            cursor = db.rawQuery(query, null);
+        }
+//this cursor is returning empty
+        return cursor;
+
     }
 }

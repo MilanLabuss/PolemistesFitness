@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
 
-      recyclerView = (RecyclerView) view.findViewById(R.id.homerecycle);
+       recyclerView = (RecyclerView) view.findViewById(R.id.homerecycle);
 
         mydb = new DatabaseHelper(getContext());
         exercise_name = new ArrayList<>();

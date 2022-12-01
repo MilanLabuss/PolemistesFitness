@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+//adapter for muscle groups and exercises recyclerview
 public class RAdapter extends RecyclerView.Adapter<RAdapter.MyViewHolder> {
 
 

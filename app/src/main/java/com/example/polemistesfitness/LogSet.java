@@ -38,7 +38,7 @@ public class LogSet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DatabaseHelper mydb = new DatabaseHelper(LogSet.this);
-                mydb.addBook(ename,
+                mydb.addSet(ename,
                         Integer.valueOf(weight_input.getText().toString()),
                         Integer.valueOf(reps_input.getText().toString()),
                         sdf.format(new Date()).toString());
