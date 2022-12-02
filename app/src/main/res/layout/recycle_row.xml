@@ -27,17 +27,20 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="8dp"
+                android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@android:drawable/ic_dialog_alert" />
+                app:srcCompat="@android:drawable/ic_dialog_alert"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/rowTitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="33dp"
-                android:text="Title"
+                android:text="@string/title"
+                android:textColor="#121212"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

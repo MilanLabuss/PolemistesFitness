@@ -67,15 +67,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (result==-1){
             Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show();
         }else{
-            Toast.makeText(context, "add success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Set Logged", Toast.LENGTH_SHORT).show();
         }
     }
 
     //method to read all data from our database table
-    Cursor readAllDate() {
+    Cursor readTodayData(String date) {
+//reading data 1 week old
+      //  select * from my_set where total_date between '29/10/2022'(date1) and '31/10/2022'(date2)
 
 //this select query needs a WHERE clause so the date is only from last week
-        String query = " SELECT * FROM " + TABLE_NAME;
+        //String query = " SELECT * FROM " + TABLE_NAME;
+        String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + TOTAL_DATE + " LIKE" + " '%" + date + "%' ";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
 

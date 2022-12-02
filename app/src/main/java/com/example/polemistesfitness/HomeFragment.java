@@ -15,7 +15,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.lang.reflect.GenericArrayType;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class HomeFragment extends Fragment {
@@ -25,6 +27,8 @@ public class HomeFragment extends Fragment {
     ArrayList<String> exercise_name, set_weight, set_reps, set_date;
     //making instance of db adapter class
     DBAdapter dbadapter;
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    String todaydate;
 
     public HomeFragment() {
     }
@@ -44,6 +48,7 @@ public class HomeFragment extends Fragment {
         set_reps = new ArrayList<>();
         set_date= new ArrayList<>();
 
+        todaydate = sdf.format(new Date()).toString();
         storeDatainArrays();
         dbadapter = new DBAdapter(getContext(),exercise_name ,set_weight,set_reps,set_date);
         recyclerView.setAdapter(dbadapter);
@@ -59,7 +64,7 @@ public class HomeFragment extends Fragment {
 
     void storeDatainArrays(){
         //calling the method in db java class and storing it in cursor
-        Cursor cursor = mydb.readAllDate();
+        Cursor cursor = mydb.readTodayData(todaydate);    //Im going to change this to read only todays Data
         if(cursor.getCount() == 0){
             Toast.makeText(getContext(), "No Data", Toast.LENGTH_SHORT).show();
         }

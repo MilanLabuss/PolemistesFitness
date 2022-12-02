@@ -4,6 +4,15 @@
     <string name="reps">Reps</string>
     <string name="submit">Submit</string>
     <string name="textview">TextView</string>
+    <string name="exercisename">ExerciseName</string>
+    <string name="repscomma">Reps</string>
+    <string name="weighttxt">Weight</string>
+    <string name="repsc">Reps:</string>
+    <string name="weightcomma">Weight:</string>
+    <string name="date">Date:</string>
+    <string name="title">Title</string>
+    <string name="todo">TODO</string>
+    <string name="todays_sets">Todays Sets</string>
 
 
     <string-array name="muscleGroup_names">
