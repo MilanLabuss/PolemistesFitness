@@ -34,8 +34,10 @@ public class HomeFragment extends Fragment {
     String weekAgoDate;
     int totalMonthlyReps=0;
     int totalMonthlyWeight=0;
+    int totalMonthSets=0;
     TextView weighttxt;
     TextView repstxt;
+    TextView setstxt;
 
 
 
@@ -53,6 +55,7 @@ public class HomeFragment extends Fragment {
 
         totalMonthlyReps=0;
         totalMonthlyWeight=0;
+        totalMonthSets=0;
 
         mydb = new DatabaseHelper(getContext());
         exercise_name = new ArrayList<>();
@@ -77,12 +80,15 @@ public class HomeFragment extends Fragment {
         for(int i=0;i<total_weight.size();i++) {
             totalMonthlyWeight += Integer.parseInt(total_weight.get(i));
             totalMonthlyReps += Integer.parseInt(total_reps.get(i));
+            System.out.println("Total sets: " + total_weight.size());
         }
 
         weighttxt =  view.findViewById(R.id.totalweighttxt);
         weighttxt.setText(String.valueOf(totalMonthlyWeight));
         repstxt = view.findViewById(R.id.totalrepstxt);
         repstxt.setText(String.valueOf(totalMonthlyReps));
+        setstxt = view.findViewById(R.id.totalsetstxt);
+        setstxt.setText(String.valueOf(total_weight.size()));
 
 
         return view;
