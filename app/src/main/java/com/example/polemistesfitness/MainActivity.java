@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                         )
                         .replace(R.id.container, homefragment)
                         .addToBackStack(null)
-                        .commit();
+
+                         .commit();
                 return true;
 
             case R.id.workout:

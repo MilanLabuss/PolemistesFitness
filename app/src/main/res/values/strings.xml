@@ -13,6 +13,8 @@
     <string name="title">Title</string>
     <string name="todo">TODO</string>
     <string name="todays_sets">Todays Sets</string>
+    <string name="total_weight">Total Weight</string>
+    <string name="todays_workout">Todays Workout</string>
 
 
     <string-array name="muscleGroup_names">

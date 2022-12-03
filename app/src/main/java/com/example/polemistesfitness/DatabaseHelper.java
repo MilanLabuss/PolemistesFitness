@@ -70,31 +70,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Set Logged", Toast.LENGTH_SHORT).show();
         }
     }
+    // String query = " select * from my_set where total_date between '29/10/2022' and '31/10/2022'";
+    // String query2 = "select * from my_set where total_date <= DATE('now', '-1 month')";
+    //Method to return total weekly sets
 
-    //method to read all data from our database table
-    Cursor readTodayData(String date) {
-//reading data 1 week old
-      //  select * from my_set where total_date between '29/10/2022'(date1) and '31/10/2022'(date2)
 
-//this select query needs a WHERE clause so the date is only from last week
-        //String query = " SELECT * FROM " + TABLE_NAME;
-        String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + TOTAL_DATE + " LIKE" + " '%" + date + "%' ";
+    Cursor TotalSetsWeek(String todayDate, String weekAgoDate){
+
+
+
+        //  String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + TOTAL_DATE + " BETWEEN"
+       //     + " '%" + todayDate + "%' " + "AND" + " '%" + weekAgoDate + "%' ";
+        String query = "select * from my_set where total_date <= DATE('now', '-1 month')";
+
+
+
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
 
         if(db!=null)
         {
             cursor = db.rawQuery(query, null);
+
         }
-        return cursor; //This will contain all the data from the db table
+//this cursor is returning empty
+        return cursor;
+
+
+
     }
 
-    //This query will return all sets from that day
 
+
+
+    //Read all of the data for a particular date
     Cursor readDate(String date) {
 
         String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + TOTAL_DATE + " LIKE" + " '%" + date + "%' ";
-        System.out.println(query);
+
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
