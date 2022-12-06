@@ -38,6 +38,9 @@ public class HomeFragment extends Fragment {
     TextView weighttxt;
     TextView repstxt;
     TextView setstxt;
+    TextView fitscoretxt;
+    int fitnessScore;
+
 
 
 
@@ -53,9 +56,13 @@ public class HomeFragment extends Fragment {
 
        recyclerView = (RecyclerView) view.findViewById(R.id.homerecycle);
 
+       //resetting in case a new set was added
         totalMonthlyReps=0;
         totalMonthlyWeight=0;
         totalMonthSets=0;
+        fitnessScore=-0;
+
+
 
         mydb = new DatabaseHelper(getContext());
         exercise_name = new ArrayList<>();
@@ -82,6 +89,8 @@ public class HomeFragment extends Fragment {
             totalMonthlyReps += Integer.parseInt(total_reps.get(i));
             System.out.println("Total sets: " + total_weight.size());
         }
+        //Calculating fitness score
+        fitnessScore = ((totalMonthlyReps*totalMonthlyWeight)/10);
 
         weighttxt =  view.findViewById(R.id.totalweighttxt);
         weighttxt.setText(String.valueOf(totalMonthlyWeight));
@@ -89,6 +98,8 @@ public class HomeFragment extends Fragment {
         repstxt.setText(String.valueOf(totalMonthlyReps));
         setstxt = view.findViewById(R.id.totalsetstxt);
         setstxt.setText(String.valueOf(total_weight.size()));
+        fitscoretxt = view.findViewById(R.id.fitscoretxt);
+        fitscoretxt.setText(String.valueOf(fitnessScore));
 
 
         return view;
