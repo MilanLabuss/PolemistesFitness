@@ -89,8 +89,9 @@ public class HomeFragment extends Fragment {
             totalMonthlyReps += Integer.parseInt(total_reps.get(i));
             System.out.println("Total sets: " + total_weight.size());
         }
-        //Calculating fitness score
-        fitnessScore = ((totalMonthlyReps*totalMonthlyWeight)/10);
+        //Fitness score is total number of sets by 2 in the month
+        fitnessScore = (total_weight.size()*2);
+
 
         weighttxt =  view.findViewById(R.id.totalweighttxt);
         weighttxt.setText(String.valueOf(totalMonthlyWeight));
