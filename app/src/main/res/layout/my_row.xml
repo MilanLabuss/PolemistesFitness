@@ -19,7 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F1F9FD"
+            android:background="#D3D6D8"
 
             android:padding="12dp">
 
@@ -27,10 +27,10 @@
                 android:id="@+id/exercise_name_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="8dp"
                 android:text="@string/exercisename"
                 android:textColor="#000000"
-                android:textSize="16sp"
+                android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -63,14 +63,15 @@
 
             <TextView
                 android:id="@+id/set_date_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
-                android:layout_marginEnd="24dp"
+                android:layout_width="84dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="9dp"
                 android:text="@string/date"
                 android:textColor="#131313"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/exercise_reps_txt"
                 app:layout_constraintTop_toTopOf="parent" />
 
